@@ -1,0 +1,88 @@
+---
+title: 'SMML: Exercise 01'
+author: "Abhijeet Parida"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+## Exercise 1-6
+```
+![Alt text] (picture.jpg)
+```
+
+
+## Exercise 7
+
+```{r}
+x=seq(-2,2,length.out = 100)
+v_max=(1+sqrt(5))/2
+v_min=(1-sqrt(5))/2
+m=c(v_max,v_min)
+plot (x,x*exp(-((x-1)**2)/2), col='red')
+abline(v=m)
+```
+
+## Exercise 8
+
+```{r}
+data("iris")
+summary(iris$Sepal.Length)
+
+```
+```{r}
+summary(iris$Petal.Length)
+
+```
+```{r}
+summary(iris$Sepal.Width)
+
+
+```
+```{r}
+summary(iris$Petal.Width)
+
+```
+
+## Exercise 9
+```{r}
+## Histogram of Sepal Length default with break
+hist(iris$Sepal.Length)
+```
+
+```{r}
+## Histogram of Sepal Length with break 20
+hist(iris$Sepal.Length, breaks = 20)
+```
+
+## Exercise 10
+```{r}
+sertosa=iris$Species==levels(iris$Species)[1]
+sertosa_no=iris[sertosa,]$Sepal.Length<5.5
+sprintf("%d %s flowers have Sepal Length <5.5, rest %d do  not",sum(sertosa_no),levels(iris$Species)[1],50-sum(sertosa_no))
+```
+```{r}
+virginica=iris$Species==levels(iris$Species)[3]
+virginica_no=iris[virginica,]$Sepal.Length<5.5
+sprintf("%d %s flowers have Sepal Length <5.5, rest %d do not",sum(virginica_no),levels(iris$Species)[3],50-sum(virginica_no))
+```
+```{r}
+versicolor=iris$Species==levels(iris$Species)[2]
+versicolor_no=iris[versicolor,]$Sepal.Length<5.5
+sprintf("%d %s flowers have Sepal Length <5.5, rest %d do not",sum(versicolor_no),levels(iris$Species)[2],50-sum(versicolor_no))
+```
+
+## Exercise 11
+```{r}
+pairs(iris, col=iris$Species)
+```
+
+## Exercise 12
+```{r}
+par(mfrow=c(1,3))
+plot(iris[sertosa,]$Petal.Width, iris[sertosa,]$Petal.Length, main = 'Sertosa')
+plot(iris[virginica,]$Petal.Width, iris[virginica,]$Petal.Length, main = 'Virgnica')
+plot(iris[versicolor,]$Petal.Width, iris[versicolor,]$Petal.Length, main = 'Versicolor')
+
+```
