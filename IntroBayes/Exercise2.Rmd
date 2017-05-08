@@ -1,0 +1,100 @@
+---
+title: 'SMML: Exercise 02'
+author: "Abhijeet Parida"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+header-includes: \usepackage{bbm}
+---
+
+## Section 1-Quiz
+```
+If you are training your machine learning task for every input with corresponding target, it is called supervised learning, which will be able to provide target for any new input after sufficient training.
+eg- Teaching alphabets to a child.
+
+If you are training your machine learning task only with a set of inputs, it is called unsupervised learning, which will be able to find the structure or relationships between different inputs.
+eg- vegetable shop arrangement potatoes with potatoes, tomatoes with tomatoes.
+
+Joint probability is used to esimate the possibility of two events occuring simultaneously. 
+eg- probability of me cooking and going to market today
+
+Conditional probablity is the estimation of probabilty of an event happening provided another event has taken place.
+eg- probability of me cooking mushroom today if buy mushroom today
+
+Marginal probabilty is the probability of an event occuring which is not conditioned on any other event.(Unconditonal event).
+
+The model developed can be tested using the validation test created out of the initial test cases. The overfitting of a model for curve fitting can be overcome by 
+1) limiting the coefficients of the polynomial
+2) using a large no.of points
+
+Bayes theorem describes the probability of an event, based on prior knowledge of conditions after an observation has been made pertaining to the event.
+$$P(A/ B) $$= \frac{P(B \mid A) \, P(A)}{P(B)},</math>
+
+
+
+```
+## Section 2-Bayesian Reasoning
+```
+
+```
+## Section 3-Coin Tossing
+```
+
+```
+# Question 7
+
+```{r}
+N=runif(20,0,1)
+
+hist(N,breaks = 5)
+abline(h=4)
+## It is expected when we get a uniform distrubution we expect
+## they will be equally divided into the no breaks
+
+```
+
+```{r}
+plot.ecdf(N)
+abline(0,1)
+## It is expected when we get a uniform distrubution we expect
+## when the horizontal line is integrated it will be a str. line with slope 1
+
+```
+
+```{r}
+par(mfrow=c(2,2))
+for (N in c(10,100,1000, 10000)){
+  x=rnorm(N)
+  plot(ecdf(x), main=N)
+}
+```
+
+```{r}
+par(mfrow=c(2,2))
+for (N in c(10,100,1000, 10000)){
+  x=rnorm(N)
+  qqnorm(x,main=N)
+  abline(0,1)
+}
+```
+
+## Section 4-Variance and Covariance
+```
+
+```
+
+## Section 5-Change of Variables
+```
+
+```
+
+## Section 6- Gaussian Distrubution
+```
+
+```
+
+## Section 7- Homework
+```
+
+```
